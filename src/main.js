@@ -3,35 +3,27 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import moment from 'moment';
-import NeowService from './js/neow-service.js';
+//import DailyThreats from './js/dailyThreats-service.js';
+import BigKahunas from './js/bigKahunas-service.js';
 
 console.log(moment().format('YYYY-M-D'));
 
 $(document).ready(function() {
-  NeowService.getNeow()
+  BigKahunas.getBigKahunas()
     .then(function(response) {
-      let today = moment().format('YYYY-M-D');
-      console.log(response.near_earth_objects[`${today}`][0].absolute_magnitude_h)
-  });
+      let name, missDistance, magnitude, diameter;
+      name = response.designation;
+      missDistance = response.close_approach_data[14].miss_distance.astronomical;
+      magnitude = response.absolute_magnitude_h;
+      diameter = response.estimated_diameter.feet.estimated_diameter_max;
+      $('#nea1-name').text(response.designation);
+      $('#nea1-miss').text(missDistance);
+      $('#nea1-mag').text(magnitude);
+      $('#nea1-dia').text(`Diameter: ${diameter} formidable feet!`);
+    });
+  // DailyThreats.getDailyThreats()
+  //   .then(function(response) {
+  //     let today = moment().format('YYYY-M-D');
+  //     $('#').text(response.near_earth_objects[`${today}`][0].absolute_magnitude_h)
+  //   });
 });
-
-
-
-
-// $(document).ready(function() {
-//   $('#weatherLocation').click(function() {
-//     let city = $('#location').val();
-//     WeatherService.getWeather(city)
-//       .then(function(weatherResponse) {
-//         if (weatherResponse instanceof Error) {
-//           throw Error(`OpenWeather API error: ${weatherResponse.message}`);
-//         }
-//         const weatherDescription = weatherResponse.weather[0].description;
-//         displayWeatherDescription(weatherDescription);
-//         return GiphyService.getGif(weatherDescription);
-//       })
-//       .catch(function(error) {
-//         displayErrors(error.message)
-//       })
-//   });
-// });
