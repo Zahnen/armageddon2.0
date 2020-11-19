@@ -12,7 +12,7 @@
     <button id ="readMore" class="btn btn-outline-dark">Find out more</button>
   </div>
   <div id="navbar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
       <a class="navbar-brand" href="#">Armageddon 2.0</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -21,8 +21,6 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="#doomsday-table">Proof</a>
-          <a class="nav-item nav-link" href="#">Pricing</a>
-          <a class="nav-item nav-link disabled" href="#">Disabled</a>
         </div>
       </div>
     </nav>
@@ -30,6 +28,7 @@
   <div id="about" class="container">
     <h2>Armageddon 2.0</h2>
     <p>Human extinction events have been prophesized since the dawn of our existence. Here at Armageddon 2.0, we believe that a cataclysmic event will bring the end of civilization <em>within our lifetimes.</em> Experts have suggested the end times may arrive via a few different ways. We believe, however, that the most likely cataclysmic event will be brought on by an asteroid collision. <b>It's happened before and we're here to tell you that it will happen again.</b> Where will you be when it happens? Do you have a plan? </p>
+    
     <p>At Armageddon 2.0, we've reinvented how you and your loved ones can prepare for the end of the world. We offer simple, fair prices for private bunkers to serve as your oasis in the end times.</p>
     <hr>
     <div class="row">
@@ -106,18 +105,30 @@
     <div id="bigKahuna" class="pt-5">
       <h2>Need more proof?</h1>
       <hr>
-      <p> NASA has confirmed the following asteroid to be a PHA. What is a PHA? We hardly have time to explain. This asteroid's collision with Earth may be IMMINENT despite NASA's attempts to placate the masses.</p>
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://lithub.com/wp-content/uploads/2019/06/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA4OC85NDQvb3JpZ2luYWwvYXN0ZXJvaWQtZWFydGguanBn.jpeg" alt="Image of Asteroid 3 Hitting Earth">
-        <div class="card-body">
-          <p class="card-text">
-            <h5 class="card-title" id="pha-name"></h5>
-            <ul>
-              <li id="pha-miss"></li>
-              <li id="pha-mag"></li>
-              <li id="pha-dia"></li>
-            </ul>
+      <div class="row">
+        <div class="col-6">
+          <p> NASA has confirmed the following asteroid to be a PHA. What is a PHA? We hardly have time to explain. This asteroid's collision with Earth may be IMMINENT despite NASA's attempts to placate the masses.</p>
+          <div id="pha-card" class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://lithub.com/wp-content/uploads/2019/06/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA4OC85NDQvb3JpZ2luYWwvYXN0ZXJvaWQtZWFydGguanBn.jpeg" alt="Image of Asteroid 3 Hitting Earth">
+            <div class="card-body">
+              <p class="card-text">
+                <h5 class="card-title" id="pha-name"></h5>
+                <ul>
+                  <li id="pha-miss"></li>
+                  <li id="pha-mag"></li>
+                  <li id="pha-dia"></li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <p>
+            What the reptilian overlords don't want you to know is that our alien octopus friends from the future have sent us a super secret archive of video footage that dishearteningly captures the impending destruction of our beloved planet. Warning: the feint of heart should not watch... but must.
           </p>
+          <video id="vid" class="mt-5" width="581" height="318.5" controls>
+            <source src="../src/assets/video/future-footage-not-fake.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>

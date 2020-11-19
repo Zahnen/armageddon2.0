@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin'); 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
@@ -10,13 +10,13 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   devtool: 'eval-source-map',
-  devServer: {
-    contentBase: './dist'
+  devServer: {               
+    contentBase: './dist'    
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'template',
+      title: 'tdd-template',
       template: './src/index.html',
       inject: 'body'
     }),
@@ -35,7 +35,25 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "eslint-loader"
-      }
+      },
+      {
+        test: /\.(mp4|gif|png|jpe?g)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/video/'
+            }
+          }
+        ]
+      },
+      {
+        test:/\.html$/,
+        use: [
+          'html-loader'
+        ]
+      },
     ]
   }
 };

@@ -72,3 +72,13 @@ a:hover {
   display: none;
   padding: 2rem;
 }
+
+.navbar {
+  background:transparent;
+  position: fixed;
+}
+
+#vid {
+  border-radius: 8px;
+  box-shadow: 0 0 .25rem black;
+}
