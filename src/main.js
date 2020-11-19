@@ -6,20 +6,20 @@ import moment from 'moment';
 //import DailyThreats from './js/dailyThreats-service.js';
 import BigKahunas from './js/bigKahunas-service.js';
 
-console.log(moment().format('YYYY-M-D'));
-
 $(document).ready(function() {
   BigKahunas.getBigKahunas()
     .then(function(response) {
-      let name, missDistance, magnitude, diameter;
+      let name, url, missDistance, magnitude, diameter;
       name = response.designation;
-      missDistance = response.close_approach_data[14].miss_distance.astronomical;
-      magnitude = response.absolute_magnitude_h;
-      diameter = response.estimated_diameter.feet.estimated_diameter_max;
-      $('#nea1-name').text(response.designation);
-      $('#nea1-miss').text(missDistance);
-      $('#nea1-mag').text(magnitude);
-      $('#nea1-dia').text(`Diameter: ${diameter} formidable feet!`);
+      url = response.nasa_jpl_url;
+      missDistance = parseInt(response.close_approach_data[14].miss_distance.lunar).toFixed(2);
+      magnitude = response.absolute_magnitude_h.toFixed(2);
+      diameter = response.estimated_diameter.feet.estimated_diameter_max.toFixed(2);
+      console.log(typeof missDistance, typeof magnitude, typeof diameter);
+      $('#pha-name').html(`<b>Asteroid<b> <a href=${url} style="asteroid-name" target="_blank">${name}</a>`);
+      $('#pha-miss').text(`Distance: ${missDistance} ominous LDs away!`);
+      $('#pha-mag').text(`Absolute Magnitude: ${magnitude}, absolutely!`);
+      $('#pha-dia').text(`Diameter: ${diameter} forboding feet round!`);
     });
   // DailyThreats.getDailyThreats()
   //   .then(function(response) {
