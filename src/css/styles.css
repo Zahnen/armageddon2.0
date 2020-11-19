@@ -1,0 +1,74 @@
+:root {
+  --smithereensRed: rgb(248, 31, 2);
+  --decimationOrange:  rgb(216, 97, 0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: rgb(33,84,184);
+  background: radial-gradient(circle, rgb(16, 83, 216) 1%, rgba(198,196,30,1) 1%, rgba(208,41,0,1) 2%, rgba(240,167,128,1) 6%, rgba(131,121,241,1) 49%, rgb(0, 1, 34) 90%) fixed;
+  color: rgb(209, 189, 235);
+}
+
+#navbar {
+  display: none;
+  text-shadow: none;
+}
+
+h1, h2, h5, p {
+  text-align: center;
+  padding: 1rem;
+  text-shadow: 0 0 .25rem black;
+}
+
+#intro {
+  text-align: center;
+  color: #d9d9d9;
+  background-color: #181818;
+  font-weight: 600;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.btn-outline-dark {
+  color:#d9d9d9;
+  border-color: #d9d9d9;
+  color: #d9d9d9;
+  font-weight: 600;
+}
+#big-kahuna {
+  text-align: center;
+}
+
+#doomsday-table {
+  display: none;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.383);
+  height: 100%;
+  box-shadow: 0 0 .25rem black;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+a {
+  color: var(--decimationOrange);
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--smithereensRed);
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+#about {
+  display: none;
+  padding: 2rem;
+}
